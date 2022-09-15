@@ -1,0 +1,9 @@
+syntax = "proto3";
+package ddeedsix.customchain.nameservice;
+
+option go_package = "github.com/dDee-D-six/custom-chain/x/nameservice/types";
+
+message Bind {
+  string nameService = 1; 
+  string creator = 2;
+}

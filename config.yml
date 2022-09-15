@@ -1,0 +1,25 @@
+accounts:
+  - name: alice
+    coins: ["20000token", "200000000stake"]
+    mnemonic: "perfect inquiry index mandate toy coin orchard primary shift moment civil ranch dentist myth asthma horror there myself slice absurd feed oak noodle gather"
+  - name: bob
+    coins: ["10000token", "100000000stake"]
+    mnemonic: "enjoy element close write notable sting afraid order wedding other today south neck speak rabbit motor morning perfect clog all good bless clock addict"
+validator:
+  name: alice
+  staked: "100000000stake"
+client:
+  openapi:
+    path: "docs/static/openapi.yml"
+  typescript:
+    path: "ts-client"
+  vuex:
+    path: "vue/src/store"
+faucet:
+  name: bob
+  coins: ["5token", "100000stake"]
+build:
+  binary: "customd"
+  main: "cmd/custom-chaind"
+  ldflags:
+    ["-X main.Version=development", "-X main.Version.BuildTags=netgo,ledger"]

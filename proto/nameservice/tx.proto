@@ -1,0 +1,37 @@
+syntax = "proto3";
+package ddeedsix.customchain.nameservice;
+
+import "nameservice/bind.proto";
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/dDee-D-six/custom-chain/x/nameservice/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc CreateBind(MsgCreateBind) returns (MsgCreateBindResponse);
+  rpc UpdateBind(MsgUpdateBind) returns (MsgUpdateBindResponse);
+  rpc DeleteBind(MsgDeleteBind) returns (MsgDeleteBindResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgCreateBind {
+  string creator = 1;
+  string nameService = 2;
+
+}
+message MsgCreateBindResponse {}
+
+message MsgUpdateBind {
+  string creator = 1;
+  string nameService = 2;
+
+}
+message MsgUpdateBindResponse {}
+
+message MsgDeleteBind {
+  string creator = 1;
+  string nameService = 2;
+}
+message MsgDeleteBindResponse {}
+
+// this line is used by starport scaffolding # proto/tx/message
